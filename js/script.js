@@ -20,6 +20,7 @@ import { isLocal, switchUrl, getUrlParam } from './common/utilities.js';
 import { CONNTYPE } from './constants.js';
 import './layout.js'; // load for side effects only
 import { mainContent, showSerial } from './layout.js';
+import { CPInstallButton } from './installer/cpinstaller.js';
 
 // Instantiate workflows
 let workflows = {};
