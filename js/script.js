@@ -306,7 +306,7 @@ async function loadWorkflow(workflowType = null) {
                 currentFilename = workflow.currentFilename;
 
                 if (isLocal()) {
-                    let url = "https://code.circuitpython.org";
+                    let url = "https://lovrojakic.github.io";
                     if (location.hostname == "localhost" || location.hostname == "127.0.0.1") {
                         url = `${location.protocol}//${location.host}`;
                     }

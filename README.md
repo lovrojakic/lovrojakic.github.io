@@ -2,7 +2,7 @@
 
 The CircuitPython Code Editor is a browser app for editing and debugging CircuitPython devices over WiFi, Bluetooth, and USB. Each connectivity option has certain requirements on CircuitPython version and device (microcontroller).
 
-A live copy of the tool is hosted here: https://code.circuitpython.org
+A live copy of the tool is hosted here: https://lovrojakic.github.io
 
 ## Environment Setup
 

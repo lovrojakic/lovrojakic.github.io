@@ -38,7 +38,7 @@ h5 {
     height: auto;
 }
 
-.purple-button {
+.orange-button {
     display: inline-block;
     font-size: 1.1em;
     width: auto;
@@ -46,7 +46,7 @@ h5 {
     color: #fff;
     border-radius: 5px;
     border: none;
-    background-color: $purple;
+    background-color: $orange;
     margin: 10px 0 10px 10px;
     cursor: pointer;
     white-space: nowrap;
@@ -64,7 +64,7 @@ h5 {
     }
 
     &:hover {
-        background-color: darken($purple, 15%);
+        background-color: darken($orange, 15%);
     }
 
     &.hidden {
@@ -72,8 +72,8 @@ h5 {
     }
 }
 
-.purple-button.inverted {
-    color: $purple;
+.orange-button.inverted {
+    color: $orange;
     background-color: $gray;
 
     &:hover {
@@ -81,7 +81,7 @@ h5 {
     }
 }
 
-.purple-button:disabled {
+.orange-button:disabled {
     background-color: #d8d8d8;
     color: #888;
 }
