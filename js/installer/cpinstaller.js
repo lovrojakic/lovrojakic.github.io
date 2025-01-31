@@ -189,7 +189,8 @@ export class CPInstallButton extends InstallButton {
     updateBinaryUrl(url) {
         //if (location.hostname == "localhost") {
             if (url) {
-                url = url.replace("https://downloads.circuitpython.org/", "https://adafruit-circuit-python.s3.amazonaws.com/");
+                console.log("URL:" + url)
+                url = url.replace("https://downloads.circuitpython.org/", "https://lovrojakic.github.io/firmware/");
             }
         //}
 
