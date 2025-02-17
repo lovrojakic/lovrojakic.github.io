@@ -20,7 +20,7 @@ import { isLocal, switchUrl, getUrlParam } from './common/utilities.js';
 import { CONNTYPE } from './constants.js';
 import './layout.js'; // load for side effects only
 import { mainContent, showSerial } from './layout.js';
-import { CPInstallButton } from './installer/cpinstaller.js';
+import { EsptoolFwInstaller } from './fw_installers/esptool_fw_installer.js';
 
 // Instantiate workflows
 let workflows = {};
@@ -32,9 +32,13 @@ let workflow = null;
 let unchanged = 0;
 let connectionPromise = null;
 
+// Instantiate installers
+let esptool_fw_installer = new EsptoolFwInstaller()
+
 const btnRestart = document.querySelector('.btn-restart');
 const btnClear = document.querySelector('.btn-clear');
 const btnConnect = document.querySelectorAll('.btn-connect');
+const btnInstall = document.querySelectorAll('.btn-install');
 const btnNew = document.querySelectorAll('.btn-new');
 const btnOpen = document.querySelectorAll('.btn-open');
 const btnSave = document.querySelectorAll('.btn-save');
@@ -566,6 +570,18 @@ document.addEventListener('DOMContentLoaded', async (event) => {
                 // If not, it should display the available connections
                 await checkConnected();
             }
+        });
+    });
+    btnInstall.forEach((element) => {
+        element.addEventListener('click', async function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            // Check if we have an active connection
+            if (workflow != null && workflow.connectionStatus()) {
+                // If so, unload the current workflow
+                await workflow.disconnectButtonHandler(null);
+            }
+            await esptool_fw_installer.installButtonHandler(null);
         });
     });
 

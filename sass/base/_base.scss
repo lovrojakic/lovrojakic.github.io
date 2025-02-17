@@ -85,3 +85,12 @@ h5 {
     background-color: #d8d8d8;
     color: #888;
 }
+
+#flashingProgressBar {
+    width: 100%;
+}
+
+#flashingProgressBar > svg {
+    width: 100%;
+    display: block;
+}
